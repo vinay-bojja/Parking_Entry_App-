@@ -1,0 +1,39 @@
+body
+{
+    background: gray;
+}
+.container
+{
+    text-shadow: 2px 2px 2px white;
+    width: 60%;
+    font-size: 3vw;
+    font-weight: 600;
+    text-align: center;
+}
+#title
+{
+    margin: 100px auto 250px auto;
+}
+#park_spot
+{
+    color: blue;
+    font-weight: bold;
+}
+#thank_you
+{
+    font-size: 5vw;
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 3s;
+}
+@keyframes fadeInOpacity
+{
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

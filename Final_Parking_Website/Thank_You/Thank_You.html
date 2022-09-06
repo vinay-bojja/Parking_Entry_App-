@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Thank You</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="style2.css">
+    </head>
+    <body>
+        <div class="container">
+            <p id="title">YOU MAY NOW PROCEED FURTHER TO PARKING SPOT <span id = park_spot>park_spot</span></p>
+            <p id="thank_you">THANK YOU!!!</p>
+        </div>
+    </body>
+    <script>
+        var ps = localStorage.getItem("parking_slot")
+        document.getElementById("park_spot").innerHTML = ps;
+
+        setTimeout(function() {
+            window.location.href = "../index.html";        //transfer user to bill page
+        },4000);
+    </script>
+</html>

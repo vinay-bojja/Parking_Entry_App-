@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Parking Ticket</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="bill_style.css">
+        <script type="text/javascript" src="qrcode.js"></script>
+        <script type="text/javascript" src="html5-qrcode.js"></script>
+        <!--script type="text/javascript" src="park_spot_occu.js"></script-->
+    </head>
+    <body>
+        <div class="container">
+            <div class="bill_print">
+                <div class="company">
+                     <!-- This is where our QRCode will appear in. -->
+                    <span id="qrcode"></span>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <p>i3Indya IOT Challenge 2019</p>
+                    <p>IIT Bombay</p>
+                </div>
+                <p id="qrcode_text">QR CODE</p>
+                <p class="decoration">==============================================================================================</p>
+                <p id="parking_title">Parking Receipt</p>
+                <p class="decoration">==============================================================================================</p>
+                <br>
+                <div class="details">
+                    <p>Vehicle No &ensp;&ensp;&ensp;: <span id="veh_no">MH 12 GM 1000</span></p>
+                    <p>Date&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;: <span id="date">04/03/2019</span></p>
+                    <p>Entry Time&ensp;&ensp;&ensp;&nbsp;: <span id="entry_time">12:07:00 AM</span></p>
+                    <p>Parking Spot&ensp;: <span id="park_spot">1</span></p>
+                </div>
+                <br>
+                <p class="note">NOTE : penalty of Rs 50 if the receipt is lost</p>
+                <p class="decoration">***************************************************************************************************************************************************</p>
+                <p class="footnote">Thank You and drive safely !</p>
+            </div>
+            <div class="col-md-12 text-center"> 
+                <button id="print" name="firstbutton" class="btn btn-success" value="Print" onclick="window.print()">PRINT</button> 
+                <a href="../Thank_You/Thank_You.html" id="back" class="btn btn-secondary" role="button">NEXT</a>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        function updateQRCode() {
+  
+            var text = localStorage.getItem("vehicle_no");
+            var ps = localStorage.getItem("parking_slot");
+
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+
+            var yyyy = today.getFullYear();
+            if (dd < 10) {
+            dd = '0' + dd;
+            } 
+            if (mm < 10) {
+            mm = '0' + mm;
+            } 
+            var today = dd + '/' + mm + '/' + yyyy;
+
+            //make changes in the bill
+            document.getElementById("veh_no").innerHTML= text;
+            document.getElementById("date").innerHTML = today;
+            document.getElementById("entry_time").innerHTML = new Date().getHours()+":"+new Date().getMinutes()+":"+new Date().getSeconds();
+            document.getElementById("park_spot").innerHTML = ps;
+
+            text = text + "_"+new Date().getHours()+":"+new Date().getMinutes()+":"+new Date().getSeconds();
+            console.log(text);
+            console.log("parking_slot "+ps);
+
+            //Print QR
+
+            var element = document.getElementById("qrcode");
+            var bodyElement = document.body;
+            if(element.lastChild)
+                element.replaceChild(showQRCode(text), element.lastChild);
+            else
+                element.appendChild(showQRCode(text));
+  
+        }
+        
+        updateQRCode();     /*function call for QR generation*/
+       
+      </script>
+</html>

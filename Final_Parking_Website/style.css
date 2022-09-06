@@ -1,0 +1,61 @@
+body
+{
+    background-color: #7b7575e3;
+    min-width: 80%;
+    text-align: center;
+
+}
+#title
+{
+    text-shadow: 2px 2px 2px white;
+}
+#GUI                /*animation for fading in*/
+{
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 3s;
+}
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+.arrow
+{
+    font-size: 20px;
+}
+.park_spot
+{
+    background-color: gray;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px black;
+    text-shadow: 1px 1px 1px whitesmoke;
+    padding: 70px;
+    font-weight: 800;
+    font-size: 25px;
+}
+.pair
+{
+    margin-top: 2%;
+}
+#ps_1
+{
+    margin-right: 15%;
+}
+#ps_2
+{
+    margin-left: 15%;
+}
+#ps_3
+{
+    margin-right: 15%;
+}
+#ps_4
+{
+    margin-left: 15%;
+}

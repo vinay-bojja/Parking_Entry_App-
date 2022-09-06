@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="http://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+                crossorigin="anonymous">
+        </script>
+        <script type="text/javascript" src="connection_receive.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1 id="title">WELCOME TO AUTOMATED PARKING</h1>
+            <div id="GUI">
+                <h3><b>ENTRY</b></h3>
+                <i class="fas fa-arrow-down arrow"></i>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 park_spot" id="ps_1" onclick="toggle_state_1()">Parking Spot 1<p id="ps_1_toggle">AVAILABLE</p></div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 park_spot" id="ps_2" onclick="toggle_state_2()">Parking Spot 2<p id="ps_2_toggle">AVAILABLE</p></div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 park_spot pair" id="ps_3" onclick="toggle_state_3()">Parking Spot 3<p id="ps_3_toggle">OCCUPIED</p></div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 park_spot pair" id="ps_4" onclick="toggle_state_4()">Parking Spot 4<p id="ps_4_toggle">OCCUPIED</p></div>
+                </div>
+                <i class="fas fa-arrow-down arrow"></i>
+                <h3><b>EXIT</b></h3>
+            </div>
+        </div>
+        <script src="script.js"></script>
+        <script type="text/javascript">
+            var time = new Date().getTime();
+            $(document.body).bind("mousemove keypress", function () {
+                time = new Date().getTime();
+            });
+
+            setInterval(function() {
+                //console.log((new Date().getTime()+"_"+time));
+                if (new Date().getTime() - time >= 10000) {
+                    window.location.reload(true);
+                }
+            }, 1000);
+        </script>
+    </body>
+</html>

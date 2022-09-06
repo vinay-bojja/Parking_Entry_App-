@@ -1,0 +1,80 @@
+.container
+{
+    margin-top: 10px;
+    width: 60%;
+    min-width: 200px;
+}
+.bill_print
+{
+    border: 1px solid black;
+    padding: 5px;
+}
+.company
+{
+    font-size: 1.2vw;
+    text-align: right;
+    margin-right: 20%;
+    margin-bottom: 100px;
+}
+#qrcode
+{
+    float: left;
+    padding-left: 10%;
+    padding-bottom: 0;
+}
+#qrcode_text
+{
+    font-weight: 650;
+    margin-left: 20%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#parking_title
+{
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2vw;
+}
+.decoration             /*number of = */
+{
+    overflow: hidden;
+    font-size: 1.5vw;
+}
+.details
+{
+    font-size: 1.2vw;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 0 10%;
+}
+.details span
+{
+    font-weight: 100;
+    float: right;
+}
+.note
+{
+    font-size: 1.2vw;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+.footnote
+{
+    font-size: 1.2vw;
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+}
+#print
+{
+    margin-top: 10px;
+    margin-right: 10px;
+}
+#back
+{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
